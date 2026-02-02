@@ -4,7 +4,7 @@
  */
 package presenzastudente;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -12,14 +12,14 @@ import java.util.Date;
  */
 public class Studente {
     private String nome;
-    private Date data;
+    private LocalDate data;
     private int matricola;
-    private Stato stato;
+    private String stato;
     
-    public Studente(String nome, Date data, int matr, Stato st) {
-        this.nome = nome;
+    public Studente(LocalDate data, int matr, String nome, String st) {      
         this.data = data;
         this.matricola = matr;
+        this.nome = nome;
         this.stato = st;
     }
     
@@ -31,11 +31,11 @@ public class Studente {
         return this.matricola;
     }
     
-    public Date getData() {
+    public LocalDate getData() {
         return this.data;
     }
     
-    public Stato getStato() {
+    public String getStato() {
         return this.stato;
     }
 }
