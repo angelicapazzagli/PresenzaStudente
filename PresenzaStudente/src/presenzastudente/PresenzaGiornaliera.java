@@ -10,13 +10,13 @@ import java.time.LocalDate;
  *
  * @author pazzagli.angelica
  */
-public class Studente {
+public class PresenzaGiornaliera {
     private String nome;
     private LocalDate data;
     private int matricola;
     private String stato;
     
-    public Studente(LocalDate data, int matr, String nome, String st) {      
+    public PresenzaGiornaliera(LocalDate data, int matr, String nome, String st) {      
         this.data = data;
         this.matricola = matr;
         this.nome = nome;

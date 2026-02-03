@@ -4,6 +4,9 @@
  */
 package presenzastudente;
 
+import java.io.IOException;
+import java.time.LocalDate;
+
 /**
  *
  * @author pazzagli.angelica
@@ -13,8 +16,13 @@ public class PresenzaStudente {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+    public static void main(String[] args) throws IOException {
+        GestoreFile gf = new GestoreFile("0_PresenzeStudenti.csv");
+        gf.readFile();
+        gf.stampaRegistro(); 
+        System.out.println("\n");
+        gf.checkAssenze();
+        System.out.println("\n");
+        gf.check(LocalDate.of(2026,01,15), LocalDate.of(2026,01,15));
+    }    
 }

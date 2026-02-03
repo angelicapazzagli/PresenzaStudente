@@ -8,11 +8,11 @@ package presenzastudente;
  *
  * @author 39333
  */
-public class Assenza {
+public class AssenteCounter {
     public int matricola, nAssenze;
     public String nome;
     
-    public Assenza(int matricola, String nome) {
+    public AssenteCounter(int matricola, String nome) {
         this.matricola = matricola;
         this.nome = nome;
         nAssenze = 0;
