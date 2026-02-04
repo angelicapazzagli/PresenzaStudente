@@ -15,10 +15,9 @@ import java.util.ArrayList;
  *
  * @author PAZZAGLI.ANGELICA
  */
-public class FileManager {
-    private static String file;
-    
-    public static ArrayList<PresenzaGiornaliera> readFile(ArrayList<PresenzaGiornaliera> registro) throws FileNotFoundException, IOException {
+public class FileManager {   
+    public static ArrayList<PresenzaGiornaliera> readFile(String file) throws FileNotFoundException, IOException {
+        ArrayList<PresenzaGiornaliera> registro = new ArrayList();
         try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             int i = 0;

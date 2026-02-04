@@ -25,7 +25,7 @@ public class GestoreFile {
     }
     
     public void readFile() throws IOException {
-        this.registro = FileManager.readFile(registro);
+        this.registro = FileManager.readFile(file);
     }
     
     public void stampaRegistro() {
