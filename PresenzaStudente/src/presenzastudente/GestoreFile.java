@@ -24,33 +24,14 @@ public class GestoreFile {
         this.registro = new ArrayList<>();
     }
     
-    public void addStudente(PresenzaGiornaliera s) {
-        if(s != null) {
-            registro.add(s);
-        }
+    public void readFile() throws IOException {
+        this.registro = FileManager.readFile(registro);
     }
     
     public void stampaRegistro() {
         for(int i = 0; i < registro.size(); i++) {
             PresenzaGiornaliera s = registro.get(i);
-            System.out.println(s.getData() + " " + s.getMatricola() + s.getNome() + s.getStato());
-        }
-    }
-    
-    public void readFile() throws FileNotFoundException, IOException {
-        try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String line;
-            int i = 0;
-            while((line = reader.readLine()) != null) {
-                if(i != 0) {
-                    String[] colonne = line.split(",");
-                    LocalDate data = LocalDate.parse(colonne[0]);
-                    int matricola = Integer.parseInt(colonne[1]);
-                    PresenzaGiornaliera s = new PresenzaGiornaliera(data, matricola, colonne[2], colonne[3]);
-                    addStudente(s);
-                }
-                i++;
-            }
+            System.out.println(s.getData() + " " + s.getMatricola() + " " + s.getNome() + " " + s.getStato());
         }
     }
     

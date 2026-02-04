@@ -15,6 +15,7 @@ public class PresenzaStudente {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
         GestoreFile gf = new GestoreFile("0_PresenzeStudenti.csv");
